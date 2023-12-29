@@ -605,7 +605,7 @@ address {
 
 .backdrop-btn-close {
   background-color: #e7e9fc;
-  order: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -630,8 +630,9 @@ address {
   fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.btn-close-icon:hover,
-.btn-close-icon:focus {
+
+.backdrop-btn-close:hover > .btn-close-icon,
+.backdrop-btn-close:focus > .btn-close-icon {
   fill: #ffffff;
 }
 
@@ -741,25 +742,19 @@ address {
   align-items: center;
   width: 16px;
   height: 16px;
-  border-radius: 4px;
-  border: 1px solid var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   cursor: pointer;
   user-select: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
 }
 .input-checkbox:checked + .input-label > .form-agreement-checkbox {
   background-color: #404bbf;
   border: none;
-}
-.form-agreement-icon {
   fill: #f4f4fd;
-  opacity: 0;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.input-checkbox:checked
-  + .input-label
-  > .form-agreement-checkbox
-  > .form-agreement-icon {
-  opacity: 1;
 }
 
 .form-agreement-link {
